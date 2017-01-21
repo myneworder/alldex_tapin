@@ -41,7 +41,7 @@ app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
 
 # Setup Storage
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///" + config.database
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 

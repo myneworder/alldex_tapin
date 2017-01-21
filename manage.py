@@ -6,12 +6,18 @@ from flask_script import Manager, Command
 from app import app, db
 from app import config
 import threading
+import os
+from os import path
 
 manager = Manager(app)
 
 
 @manager.command
 def install():
+    database_dir = path.dirname(config.database)
+    if len(database_dir) > 0 and not path.exists(database_dir):
+        os.makedirs(database_dir)
+
     db.create_all()
 
 

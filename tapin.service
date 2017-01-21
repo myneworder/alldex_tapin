@@ -1,0 +1,10 @@
+[Unit]
+Description=Graphene Faucet Service
+After=network.target
+
+[Service]
+WorkingDirectory=/var/lib/tapin
+ExecStart=/usr/bin/python3 /opt/tapin/manage.py run
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,21 @@
+secret_key: ""  # Random keys (24 bytes are recomended by flask)
+nobroadcast: True
+database: "database.sqlite"
+
+mail_host: "SERVER:589"
+mail_user: "user"
+mail_pass: "password"
+mail_from: "noreply@faucet.org"
+
+admins:
+ - adminA@example.com
+ - adminB@example.com
+
+minIPAge: 300  # How long in secs does an IP need to wait to register a new account?
+witness_url: "ws://localhost:11011"
+registrar: "init0"
+default_referrer: "init1"
+referrer_percent: 50  # in percent
+prefix: "GPH"
+wif: "" #private key | wallet import format
+balance_mailthreshold: 500  # if balances goes below this, you will be notified

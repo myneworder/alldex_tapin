@@ -4,7 +4,7 @@
 
 ## Installation
 
-* edit `config.py` and provide private keys and settings
+* edit `config.yml` and provide private keys and settings
 * `python manage.py install`
 
 ## Usage
