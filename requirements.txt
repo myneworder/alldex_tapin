@@ -1,21 +1,35 @@
-# git repos
--e git://github.com/xeroc/python-graphenelib@minimal#egg=graphenelib
--e git://github.com/xeroc/python-bitshares@develop#egg=bitshares
-autobahn
-pycrypto
-pyyaml
-
-# flask
-flask
-Flask-SQLAlchemy
-Flask-Session
-flask-cors
-flask-script
-flask-mail
-
-# hosting
-gunicorn
-configparser
-
-# misc
-requests>=2.9.1
+appdirs==1.4.3
+autobahn==18.5.1
+-e git+https://github.com/ninetor/gateis_python.git@89b155f0e3596685a7bcee4c562aaf05794662d9#egg=bitshares
+blinker==1.4
+certifi==2018.4.16
+chardet==3.0.4
+click==6.7
+configparser==3.5.0
+ecdsa==0.13
+Events==0.3
+Flask==1.0.2
+Flask-Cors==3.0.4
+Flask-Mail==0.9.1
+Flask-Script==2.0.6
+Flask-Session==0.3.1
+Flask-SQLAlchemy==2.3.2
+-e git://github.com/xeroc/python-graphenelib@a5c4ed53aa22e8538e64e61055bed97ac459db64#egg=graphenelib
+gunicorn==19.8.1
+idna==2.6
+itsdangerous==0.24
+Jinja2==2.10
+MarkupSafe==1.0
+pycryptodome==3.6.1
+pycryptodomex==3.6.1
+pylibscrypt==1.7.1
+PyYAML==3.12
+requests==2.18.4
+scrypt==0.8.6
+six==1.11.0
+SQLAlchemy==1.2.7
+txaio==2.10.0
+urllib3==1.22
+websocket-client==0.47.0
+websockets==4.0.1
+Werkzeug==0.14.1

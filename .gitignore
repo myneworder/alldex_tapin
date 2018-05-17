@@ -1,3 +1,9 @@
+# Repository files
+*.sqlite
+
+# VS Code files
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -60,3 +66,5 @@ target/
 .env
 config.yml
 *.db
+
+

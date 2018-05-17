@@ -51,7 +51,8 @@ def tapbasic(referrer):
     bitshares = BitShares(
         config.witness_url,
         nobroadcast=config.nobroadcast,
-        keys=[config.wif]
+        keys=[config.wif],
+        prefix=config.prefix
     )
 
     try:
