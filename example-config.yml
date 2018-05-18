@@ -1,6 +1,7 @@
-secret_key: ""  # Random keys (24 bytes are recomended by flask)
-nobroadcast: True
 database: "database.sqlite"
+
+secret_key: "RANDOM-STRING"  # Random keys
+nobroadcast: False            # Safety mode
 
 mail_host: "SERVER:589"
 mail_user: "user"
@@ -12,10 +13,16 @@ admins:
  - adminB@example.com
 
 minIPAge: 300  # How long in secs does an IP need to wait to register a new account?
-witness_url: "ws://localhost:11011"
+witness_url: "ws://localhost:8090"
+
 registrar: "init0"
-default_referrer: "init1"
+default_referrer: "init0"
 referrer_percent: 50  # in percent
-prefix: "GPH"
-wif: "" #private key | wallet import format
+wif: "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"
+
 balance_mailthreshold: 500  # if balances goes below this, you will be notified
+
+core_asset: "BTS"
+donation_amount: 10000
+donation_asset: BTS
+prefix: "BTS"
