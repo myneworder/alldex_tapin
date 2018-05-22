@@ -26,3 +26,5 @@ core_asset: "BTS"
 donation_amount: 10000
 donation_asset: BTS
 prefix: "BTS"
+
+registrations_limit: 100000

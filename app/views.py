@@ -25,7 +25,6 @@ def index():
 @app.route('/api/v1/accounts', methods=['POST'], defaults={'referrer': None})
 @app.route('/<referrer>/api/v1/accounts', methods=['POST'])
 def tapbasic(referrer):
-
     # test is request has 'account' key
     if not request.json or 'account' not in request.json:
         abort(400)
@@ -35,6 +34,9 @@ def tapbasic(referrer):
     if any([key not in account
             for key in ["active_key", "memo_key", "owner_key", "name"]]):
         abort(400)
+
+    if len(models.Accounts.query.options().all()) >= config.registrations_limit:
+        return api_error("Registration limit achieved")
 
     # prevent massive account registration
     if request.remote_addr != "127.0.0.1" and models.Accounts.exists(request.remote_addr):
