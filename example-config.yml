@@ -22,9 +22,9 @@ wif: "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"
 
 balance_mailthreshold: 500  # if balances goes below this, you will be notified
 
-core_asset: "BTS"
+core_asset: "LLC"
 donation_amount: 10000
-donation_asset: BTS
-prefix: "BTS"
+donation_asset: LLC
+prefix: "LLC"
 
 registrations_limit: 100000

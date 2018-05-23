@@ -1,6 +1,6 @@
 appdirs==1.4.3
 autobahn==18.5.1
--e git+ssh://git@github.com/ninetor/gateis_python.git@d54316f64b6930710f39a31819956dc2a3725bb7#egg=bitshares
+-e git+ssh://git@github.com/ninetor/gateis_python.git@8dcb96f1e#egg=bitshares
 blinker==1.4
 certifi==2018.4.16
 chardet==3.0.4
