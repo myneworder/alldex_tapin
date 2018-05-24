@@ -14,7 +14,7 @@ Flask-Mail==0.9.1
 Flask-Script==2.0.6
 Flask-Session==0.3.1
 Flask-SQLAlchemy==2.3.2
--e git://github.com/xeroc/python-graphenelib@a5c4ed53aa22e8538e64e61055bed97ac459db64#egg=graphenelib
+-e git+ssh://git@github.com/ninetor/gateis_python-graphenelib.git@a7b9b66b4e6355c#egg=graphenelib
 gunicorn==19.8.1
 idna==2.6
 itsdangerous==0.24
