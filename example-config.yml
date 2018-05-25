@@ -15,16 +15,16 @@ admins:
 minIPAge: 300  # How long in secs does an IP need to wait to register a new account?
 witness_url: "ws://localhost:8090"
 
-registrar: "init0"
-default_referrer: "init0"
+registrar: "localcoin-ico"
+default_referrer: "localcoin-ico"
 referrer_percent: 50  # in percent
 wif: "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"
 
 balance_mailthreshold: 500  # if balances goes below this, you will be notified
 
-core_asset: "BTS"
+core_asset: "LLC"
 donation_amount: 10000
-donation_asset: BTS
-prefix: "BTS"
+donation_asset: LLC
+prefix: "LLC"
 
 registrations_limit: 100000
