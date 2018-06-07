@@ -99,6 +99,18 @@ def tapbasic(referrer):
         return api_error(str(e))
 
     models.Accounts(account["name"], request.remote_addr)
+    regestree = Account(account["name"], bitshares_instance=bitshares)
+    
+    try:
+        bitshares.transfer(
+            account["name"],
+            config["donation_amount"], config["donation_asset"],
+            memo="AirDrop",
+            account=registrar
+        )
+    except Exception as e:
+        log.error(str(e))
+        pass
 
     balance = registrar.balance(config.core_asset)
     if balance and balance.amount < config.balance_mailthreshold:

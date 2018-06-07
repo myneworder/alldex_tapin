@@ -49,32 +49,36 @@ db = SQLAlchemy(app)
 cors = CORS(app, resources={r".*/api/v1/.*": {"origins": "*"}})
 
 # Logging
-log_handler_mail = SMTPHandler(config.mail_host.split(":"),
-                               config.mail_from,
-                               config.admins,
-                               '[faucet] Error',
-                               (config.mail_user,
-                                config.mail_pass))
-log_handler_mail.setFormatter(logging.Formatter(
-    "Message type:       %(levelname)s\n" +
-    "Location:           %(pathname)s:%(lineno)d\n" +
-    "Module:             %(module)s\n" +
-    "Function:           %(funcName)s\n" +
-    "Time:               %(asctime)s\n" +
-    "\n" +
-    "Message:\n" +
-    "\n" +
-    "%(message)s\n"
-))
-log_handler_mail.setLevel(logging.WARN)
+app.logger.setLevel(logging.INFO if app.debug else logging.WARN)
+
+if config.mail_enabled:
+    log_handler_mail = SMTPHandler(config.mail_host.split(":"),
+                                config.mail_from,
+                                config.admins,
+                                '[faucet] Error',
+                                (config.mail_user,
+                                    config.mail_pass))
+
+    log_handler_mail.setFormatter(logging.Formatter(
+        "Message type:       %(levelname)s\n" +
+        "Location:           %(pathname)s:%(lineno)d\n" +
+        "Module:             %(module)s\n" +
+        "Function:           %(funcName)s\n" +
+        "Time:               %(asctime)s\n" +
+        "\n" +
+        "Message:\n" +
+        "\n" +
+        "%(message)s\n"
+    ))
+    log_handler_mail.setLevel(logging.WARN)
+    app.logger.addHandler(log_handler_mail)
+
 log_handler_stdout = logging.StreamHandler(sys.stdout)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 log_handler_stdout.setFormatter(formatter)
 log_handler_rotate = RotatingFileHandler('faucet.log',
                                          maxBytes=1024 * 1024 * 100,
                                          backupCount=20)
-log_handler_rotate.setLevel(logging.CRITICAL)
-app.logger.addHandler(log_handler_mail)
 app.logger.addHandler(log_handler_rotate)
 app.logger.addHandler(log_handler_stdout)
 

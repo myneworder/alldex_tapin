@@ -3,6 +3,7 @@ database: "database.sqlite"
 secret_key: "RANDOM-STRING"  # Random keys
 nobroadcast: False            # Safety mode
 
+mail_enabled: False
 mail_host: "SERVER:589"
 mail_user: "user"
 mail_pass: "password"
