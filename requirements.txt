@@ -29,7 +29,7 @@ scrypt==0.8.6
 six==1.11.0
 SQLAlchemy==1.2.7
 txaio==2.10.0
-urllib3==1.22
+urllib3==1.26.5
 websocket-client==0.47.0
 websockets==4.0.1
 Werkzeug==0.14.1
